@@ -1,0 +1,182 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <style type="text/css">
+        #bodycolor {
+            font-size: 12pt;
+            color: red;
+        }
+
+        .littlered {
+            color: red;
+            font-size: 9pt
+        }
+
+        .bigred {
+            color: red;
+            font-size: 14pt
+        }
+    </style>
+    <form name="form1">
+        <p class="littlered" onmouseover="this.style.color='blue';" onmouseout="this.style.color='red';" onclick="this.className='bigred';">姓名：</p>
+        <input type="text" size="20" name="username" placeholder="name"><br>
+        <p class="littlered" onmouseover="this.style.color='blue';" onmouseout="this.style.color='red';" onclick="this.className='bigred';">生日：</p>
+        <input type="text" size="20" name="bday" placeholder="birthday"><br>
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="female">女<br>
+        <input type="checkbox" name="hobby" value="swimming">游泳
+        <input type="checkbox" name="hobby" value="basketball">籃球
+        <input type="checkbox" name="hobby" value="baseball">棒球<br> 自傳
+        <br><textarea name="note" cols="50" rows="10"></textarea>
+        <input type="button" value="出現表格" onclick="addTable()">
+    </form>
+
+
+
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <div id="myDiv">
+        <center>
+            <input type="button" value="出現表格" onclick="addTable()">
+    </div>
+    <script>
+        function addTable() {
+            var username = document.form1.username.value;
+            var bday = document.form1.bday.value;
+            var sex = document.form1.sex.value;
+            var hobby = document.form1.hobby[0].value;
+            var hobby1 = document.form1.hobby[1].value;
+            var hobby2 = document.form1.hobby[2].value;
+            var note = document.form1.note.value;
+            if (Boolean(document.form1.hobby[0].checked == true)) {
+                var a = hobby
+            } else {
+                var a = ''
+            }
+            if (Boolean(document.form1.hobby[1].checked == true)) {
+                var b = hobby1
+            } else {
+                var b = ''
+            }
+            if (Boolean(document.form1.hobby[2].checked == true)) {
+                var c = hobby2
+            } else {
+                var c = ''
+            }
+
+            var p1 = document.getElementById('myDiv');
+            var c1 = document.createElement('table');
+            var c2 = document.createElement('tr');
+            var c3 = document.createElement('td');
+            c3.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    c3.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var c4 = document.createElement('td');
+            c4.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    c4.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var c5 = document.createElement('td');
+            c5.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    c5.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var c6 = document.createElement('td');
+            c6.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    c6.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var c7 = document.createElement('td');
+            c7.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    c7.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var n1 = document.createElement('tr');
+            var n2 = document.createElement('td');
+            n2.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    n2.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var n3 = document.createElement('td');
+            n3.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    n3.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var n4 = document.createElement('td');
+            n4.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    n4.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var n5 = document.createElement('td');
+            n5.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    n5.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var n6 = document.createElement('td');
+            n6.setAttribute("onmouseover", "this.style.color='red',this.style.fontStyle='italic'");
+				    n6.setAttribute("onmouseout", "this.style.color='initial',this.style.fontStyle='initial'");
+            var t1 = document.createTextNode('姓名');
+            var t2 = document.createTextNode('生日');
+            var t3 = document.createTextNode('性別');
+            var t4 = document.createTextNode('興趣');
+            var t5 = document.createTextNode('自傳');
+            var t6 = document.createTextNode(username);
+            var t7 = document.createTextNode(bday);
+            var t8 = document.createTextNode(sex);
+            var t9 = document.createTextNode(a + "\n" + b + '\n' + c);
+            var t0 = document.createTextNode(note);
+
+            p1.appendChild(c1);
+            c1.appendChild(c2); //table append tr
+            c2.appendChild(c3); //tr append td
+            c2.appendChild(c4);
+            c2.appendChild(c5);
+            c2.appendChild(c6);
+            c2.appendChild(c7);
+            c3.appendChild(t1);
+            c4.appendChild(t2);
+            c5.appendChild(t3);
+            c6.appendChild(t4);
+            c7.appendChild(t5);
+            c1.appendChild(n1); //table append tr
+            n1.appendChild(n2); // tr append th
+            n1.appendChild(n3);
+            n1.appendChild(n4);
+            n1.appendChild(n5);
+            n1.appendChild(n6);
+            n2.appendChild(t6);
+            n3.appendChild(t7);
+            n4.appendChild(t8);
+            n5.appendChild(t9);
+            n6.appendChild(t0);
+
+        }
+
+
+
+
+        /*r = t.insertRow(0);
+      c = r.insertCell(0);
+      c.innerHTML = "姓名";
+      x = r.insertCell(1);
+      x.innerHTML = "生日";
+      v = r.insertCell(2);
+      v.innerHTML = "性別";
+      b = r.insertCell(3);
+      b.innerHTML = "興趣";
+      n = r.insertCell(4);
+      n.innerHTML = "自傳";
+      r = t.insertRow(1);
+      q = r.insertCell(0);
+      q.innerHTML = username;
+      x = r.insertCell(1);
+      x.innerHTML = bday;
+      v = r.insertCell(2);
+      v.innerHTML = sex;
+      b = r.insertCell(3);
+      b.innerHTML = a+"\n"+b+"\n"+c;
+      n = r.insertCell(4);
+      n.innerHTML = note;
+      document.getElementById("myDiv").appendChild(t);
+  }*/
+    </script>
+
+
+
+</body>
+
+</html>
